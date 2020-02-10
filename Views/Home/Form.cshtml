@@ -1,0 +1,48 @@
+@using System.ComponentModel.DataAnnotations;
+
+
+@{
+    ViewData["Title"] = "Form Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome!</h1>
+    <h4>This is a Form!</h4>
+    <p>--</p> 
+
+    @model User
+    <form asp-action="Create" asp-controller="Home"  method="post">
+
+       
+        <p><span class = "valid" asp-validation-for="Name"></span></p>
+        <p><label asp-for="Name">Your Name:</label>
+        <input asp-for="Name" type = "text"/></p>
+        
+        
+        <p><span class = "valid" asp-validation-for="Location"></span></p>
+        <label asp-for="Location">Location: </label>
+            <select id="locations" asp-for= "Location" placeholder="Select location">
+                <option value="" default="" selected="">Select location</option>
+                <option value="San Jose">San Jose</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Chicago">Chicago</option>
+                <option value="New York">New Yorke</option>
+            </select>
+        
+        <p><span class = "valid" asp-validation-for="Language"></span></p>
+        <p asp-for= "Language">Favorite Language:
+            <select id="languages" asp-for= "Language" placeholder="Select favorite language">
+                <option value="" default="" selected="">Select favorite language</option>
+                <option value="C#">C#</option>
+                <option value="Python">Python</option>
+                <option value="C++">C++</option>
+                <option value="Java">Java</option>
+            </select>
+        </p>
+
+        <p><span class = "valid" asp-validation-for="Comment"></span></p>
+        <p><label asp-for= "Comment">Comment (optional):</label></p>
+        <textarea asp-for="Comment" rows = "4" col = "50"></textarea>
+        <p><input value="Submit" type = "submit"></p>
+    </form>
+</div>

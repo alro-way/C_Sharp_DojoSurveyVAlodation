@@ -1,0 +1,20 @@
+@using C_Sharp_DojoSurveyVAlodation.Models
+
+@model User
+
+@{
+    ViewData["Title"] = "Survey Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome!</h1>
+    <h4>Here is Submitted Info!</h4>
+    <p>--</p> 
+    
+    <h4></h4>
+    <p>Name: @Model.Name</p>
+    <p>Dojo Location: @Model.Location</p>
+    <p>Favorite Language: @Model.Language</p>
+    <p>Comment: @Model.Comment</p>
+    <a href = "/">Go back</a>
+</div>
